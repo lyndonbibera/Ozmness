@@ -5,3 +5,4 @@ web-app/WEB-INF/classes
 .idea/*
 Ozmness-grailsPlugins.iml
 Ozmness.iml
+lib
