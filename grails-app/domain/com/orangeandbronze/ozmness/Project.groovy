@@ -23,7 +23,7 @@ class Project {
 
     static constraints = {
         name(validator: { val, obj ->
-            val.length() >= 1 ? true : 'project.error.short'
+            val.length() >= 1 ? true : 'error.project.short'
         })
     }
 

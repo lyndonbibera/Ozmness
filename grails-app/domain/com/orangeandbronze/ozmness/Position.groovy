@@ -4,15 +4,15 @@ class Position {
     String name
 
     static hasMany = [
-        ratings:MinimumRating
+        minimumRatings:MinimumRating
     ]
 
     static mapping = {
         table('positions')
-        ratings(joinTable: [
+        minimumRatings(joinTable: [
             name: 'position_ratings',
             key: 'position_id',
-            column: 'rating_id'
+            column: 'minimum_rating_id'
         ])
     }
 

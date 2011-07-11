@@ -20,7 +20,7 @@ class Employee extends User {
         lastName(blank: false)
         position(blank: false)
         mentor(validator: { val, obj ->
-            val == null || val.id !=  obj.id ? true : "employee.error.circular"
+            val == null || val.id !=  obj.id ? true : "error.employee.circular"
         })
     }
 
