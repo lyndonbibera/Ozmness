@@ -1,10 +1,10 @@
 
-<%@ page import="com.orangeandbronze.ozmness.Employee" %>
+<%@ page import="com.orangeandbronze.ozmness.User" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
+        <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -21,28 +21,28 @@
                 <table>
                     <thead>
                         <tr>
-                        
-                            <g:sortableColumn property="username" title="${message(code: 'employee.username.label', default: 'Username')}" />
 
-                            <g:sortableColumn property="firstName" title="${message(code: 'employee.firstName.label', default: 'First Name')}" />
+                            <g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
+
+                            <g:sortableColumn property="accountExpired" title="${message(code: 'user.accountExpired.label', default: 'Account Expired')}" />
                         
-                            <g:sortableColumn property="lastName" title="${message(code: 'employee.lastName.label', default: 'Last Name')}" />
+                            <g:sortableColumn property="accountLocked" title="${message(code: 'user.accountLocked.label', default: 'Account Locked')}" />
                         
-                            <th><g:message code="employee.position.label" default="Position" /></th>
+                            <g:sortableColumn property="enabled" title="${message(code: 'user.enabled.label', default: 'Enabled')}" />
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${employeeInstanceList}" status="i" var="employeeInstance">
+                    <g:each in="${userInstanceList}" status="i" var="userInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
-                            <td><g:link action="show" id="${employeeInstance.id}">${fieldValue(bean: employeeInstance, field: "username")}</g:link></td>
+                            <td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
 
-                            <td>${fieldValue(bean: employeeInstance, field: "firstName")}</td>
+                            <td><g:formatBoolean boolean="${userInstance.accountExpired}" /></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "lastName")}</td>
+                            <td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "position")}</td>
+                            <td><g:formatBoolean boolean="${userInstance.enabled}" /></td>
                         
                         </tr>
                     </g:each>
@@ -50,7 +50,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${employeeInstanceTotal}" />
+                <g:paginate total="${userInstanceTotal}" />
             </div>
         </div>
     </body>

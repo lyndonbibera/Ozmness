@@ -1,10 +1,10 @@
 
-<%@ page import="com.orangeandbronze.ozmness.Employee" %>
+<%@ page import="com.orangeandbronze.ozmness.Project" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
+        <g:set var="entityName" value="${message(code: 'project.label', default: 'Project')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -21,28 +21,27 @@
                 <table>
                     <thead>
                         <tr>
+                            <g:sortableColumn property="name" title="${message(code: 'project.name.label', default: 'Name')}" />
                         
-                            <g:sortableColumn property="username" title="${message(code: 'employee.username.label', default: 'Username')}" />
-
-                            <g:sortableColumn property="firstName" title="${message(code: 'employee.firstName.label', default: 'First Name')}" />
+                            <g:sortableColumn property="dateFinished" title="${message(code: 'project.dateFinished.label', default: 'Date Finished')}" />
                         
-                            <g:sortableColumn property="lastName" title="${message(code: 'employee.lastName.label', default: 'Last Name')}" />
+                            <g:sortableColumn property="dateStarted" title="${message(code: 'project.dateStarted.label', default: 'Date Started')}" />
                         
-                            <th><g:message code="employee.position.label" default="Position" /></th>
+                            <th><g:message code="project.lead.label" default="Lead" /></th>
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${employeeInstanceList}" status="i" var="employeeInstance">
+                    <g:each in="${projectInstanceList}" status="i" var="projectInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
-                            <td><g:link action="show" id="${employeeInstance.id}">${fieldValue(bean: employeeInstance, field: "username")}</g:link></td>
-
-                            <td>${fieldValue(bean: employeeInstance, field: "firstName")}</td>
+                            <td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean: projectInstance, field: "name")}</g:link></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "lastName")}</td>
+                            <td><g:formatDate date="${projectInstance.dateFinished}" /></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "position")}</td>
+                            <td><g:formatDate date="${projectInstance.dateStarted}" /></td>
+                        
+                            <td>${fieldValue(bean: projectInstance, field: "lead")}</td>
                         
                         </tr>
                     </g:each>
@@ -50,7 +49,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${employeeInstanceTotal}" />
+                <g:paginate total="${projectInstanceTotal}" />
             </div>
         </div>
     </body>

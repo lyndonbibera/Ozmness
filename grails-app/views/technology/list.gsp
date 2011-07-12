@@ -1,10 +1,10 @@
 
-<%@ page import="com.orangeandbronze.ozmness.Employee" %>
+<%@ page import="com.orangeandbronze.ozmness.Technology" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
+        <g:set var="entityName" value="${message(code: 'technology.label', default: 'Technology')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -21,28 +21,20 @@
                 <table>
                     <thead>
                         <tr>
-                        
-                            <g:sortableColumn property="username" title="${message(code: 'employee.username.label', default: 'Username')}" />
 
-                            <g:sortableColumn property="firstName" title="${message(code: 'employee.firstName.label', default: 'First Name')}" />
+                            <th><g:message code="technology.parent.label" default="Parent" /></th>
                         
-                            <g:sortableColumn property="lastName" title="${message(code: 'employee.lastName.label', default: 'Last Name')}" />
-                        
-                            <th><g:message code="employee.position.label" default="Position" /></th>
+                            <g:sortableColumn property="name" title="${message(code: 'technology.name.label', default: 'Name')}" />
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${employeeInstanceList}" status="i" var="employeeInstance">
+                    <g:each in="${technologyInstanceList}" status="i" var="technologyInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
-                            <td><g:link action="show" id="${employeeInstance.id}">${fieldValue(bean: employeeInstance, field: "username")}</g:link></td>
-
-                            <td>${fieldValue(bean: employeeInstance, field: "firstName")}</td>
+                            <td>${fieldValue(bean: technologyInstance, field: "parent")}</td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "lastName")}</td>
-                        
-                            <td>${fieldValue(bean: employeeInstance, field: "position")}</td>
+                            <td><g:link action="show" id="${technologyInstance.id}">${fieldValue(bean: technologyInstance, field: "name")}</g:link></td>
                         
                         </tr>
                     </g:each>
@@ -50,7 +42,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${employeeInstanceTotal}" />
+                <g:paginate total="${technologyInstanceTotal}" />
             </div>
         </div>
     </body>

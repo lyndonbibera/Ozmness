@@ -1,10 +1,10 @@
 
-<%@ page import="com.orangeandbronze.ozmness.Employee" %>
+<%@ page import="com.orangeandbronze.ozmness.Rating" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
+        <g:set var="entityName" value="${message(code: 'rating.label', default: 'Rating')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -21,28 +21,31 @@
                 <table>
                     <thead>
                         <tr>
+                            <th><g:message code="rating.technology.label" default="Technology" /></th>
                         
-                            <g:sortableColumn property="username" title="${message(code: 'employee.username.label', default: 'Username')}" />
-
-                            <g:sortableColumn property="firstName" title="${message(code: 'employee.firstName.label', default: 'First Name')}" />
+                            <g:sortableColumn property="value" title="${message(code: 'rating.value.label', default: 'Value')}" />
                         
-                            <g:sortableColumn property="lastName" title="${message(code: 'employee.lastName.label', default: 'Last Name')}" />
+                            <g:sortableColumn property="comment" title="${message(code: 'rating.comment.label', default: 'Comment')}" />
                         
-                            <th><g:message code="employee.position.label" default="Position" /></th>
+                            <th><g:message code="rating.rated.label" default="Rated" /></th>
+                        
+                            <th><g:message code="rating.creator.label" default="Creator" /></th>
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${employeeInstanceList}" status="i" var="employeeInstance">
+                    <g:each in="${ratingInstanceList}" status="i" var="ratingInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
-                            <td><g:link action="show" id="${employeeInstance.id}">${fieldValue(bean: employeeInstance, field: "username")}</g:link></td>
-
-                            <td>${fieldValue(bean: employeeInstance, field: "firstName")}</td>
+                            <td><g:link action="show" id="${ratingInstance.id}">${fieldValue(bean: ratingInstance, field: "technology")}</g:link></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "lastName")}</td>
+                            <td>${fieldValue(bean: ratingInstance, field: "value")}</td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "position")}</td>
+                            <td>${fieldValue(bean: ratingInstance, field: "comment")}</td>
+                        
+                            <td>${fieldValue(bean: ratingInstance, field: "rated")}</td>
+                        
+                            <td>${fieldValue(bean: ratingInstance, field: "creator")}</td>
                         
                         </tr>
                     </g:each>
@@ -50,7 +53,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${employeeInstanceTotal}" />
+                <g:paginate total="${ratingInstanceTotal}" />
             </div>
         </div>
     </body>

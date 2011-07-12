@@ -1,5 +1,3 @@
-
-
 <%@ page import="com.orangeandbronze.ozmness.Employee" %>
 <html>
     <head>
@@ -39,16 +37,7 @@
                                     <g:textField name="username" value="${employeeInstance?.username}" />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="password"><g:message code="employee.password.label" default="Password" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'password', 'errors')}">
-                                    <g:textField name="password" value="${employeeInstance?.password}" />
-                                </td>
-                            </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="firstName"><g:message code="employee.firstName.label" default="First Name" /></label>
@@ -84,34 +73,7 @@
                                     <g:select name="mentor.id" from="${com.orangeandbronze.ozmness.Employee.list()}" optionKey="id" value="${employeeInstance?.mentor?.id}"  />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="accountExpired"><g:message code="employee.accountExpired.label" default="Account Expired" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'accountExpired', 'errors')}">
-                                    <g:checkBox name="accountExpired" value="${employeeInstance?.accountExpired}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="accountLocked"><g:message code="employee.accountLocked.label" default="Account Locked" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'accountLocked', 'errors')}">
-                                    <g:checkBox name="accountLocked" value="${employeeInstance?.accountLocked}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="enabled"><g:message code="employee.enabled.label" default="Enabled" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'enabled', 'errors')}">
-                                    <g:checkBox name="enabled" value="${employeeInstance?.enabled}" />
-                                </td>
-                            </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="mentees"><g:message code="employee.mentees.label" default="Mentees" /></label>
@@ -127,16 +89,7 @@
 
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="passwordExpired"><g:message code="employee.passwordExpired.label" default="Password Expired" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'passwordExpired', 'errors')}">
-                                    <g:checkBox name="passwordExpired" value="${employeeInstance?.passwordExpired}" />
-                                </td>
-                            </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="projectLeads"><g:message code="employee.projectLeads.label" default="Project Leads" /></label>

@@ -37,13 +37,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="employee.password.label" default="Password" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: employeeInstance, field: "password")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="employee.firstName.label" default="First Name" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: employeeInstance, field: "firstName")}</td>
@@ -72,27 +65,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="employee.accountExpired.label" default="Account Expired" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${employeeInstance?.accountExpired}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="employee.accountLocked.label" default="Account Locked" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${employeeInstance?.accountLocked}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="employee.enabled.label" default="Enabled" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${employeeInstance?.enabled}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="employee.mentees.label" default="Mentees" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">
@@ -104,14 +76,7 @@
                             </td>
                             
                         </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="employee.passwordExpired.label" default="Password Expired" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${employeeInstance?.passwordExpired}" /></td>
-                            
-                        </tr>
-                    
+
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="employee.projectLeads.label" default="Project Leads" /></td>
                             

@@ -1,10 +1,10 @@
 
-<%@ page import="com.orangeandbronze.ozmness.Employee" %>
+<%@ page import="com.orangeandbronze.ozmness.MinimumRating" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
+        <g:set var="entityName" value="${message(code: 'minimumRating.label', default: 'MinimumRating')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -21,28 +21,19 @@
                 <table>
                     <thead>
                         <tr>
+                            <th><g:message code="minimumRating.technology.label" default="Technology" /></th>
                         
-                            <g:sortableColumn property="username" title="${message(code: 'employee.username.label', default: 'Username')}" />
-
-                            <g:sortableColumn property="firstName" title="${message(code: 'employee.firstName.label', default: 'First Name')}" />
-                        
-                            <g:sortableColumn property="lastName" title="${message(code: 'employee.lastName.label', default: 'Last Name')}" />
-                        
-                            <th><g:message code="employee.position.label" default="Position" /></th>
+                            <g:sortableColumn property="value" title="${message(code: 'minimumRating.value.label', default: 'Value')}" />
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${employeeInstanceList}" status="i" var="employeeInstance">
+                    <g:each in="${minimumRatingInstanceList}" status="i" var="minimumRatingInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
-                            <td><g:link action="show" id="${employeeInstance.id}">${fieldValue(bean: employeeInstance, field: "username")}</g:link></td>
-
-                            <td>${fieldValue(bean: employeeInstance, field: "firstName")}</td>
+                            <td><g:link action="show" id="${minimumRatingInstance.id}">${fieldValue(bean: minimumRatingInstance, field: "technology")}</g:link></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "lastName")}</td>
-                        
-                            <td>${fieldValue(bean: employeeInstance, field: "position")}</td>
+                            <td>${fieldValue(bean: minimumRatingInstance, field: "value")}</td>
                         
                         </tr>
                     </g:each>
@@ -50,7 +41,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${employeeInstanceTotal}" />
+                <g:paginate total="${minimumRatingInstanceTotal}" />
             </div>
         </div>
     </body>

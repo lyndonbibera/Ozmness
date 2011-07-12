@@ -1,10 +1,10 @@
 
-<%@ page import="com.orangeandbronze.ozmness.Employee" %>
+<%@ page import="com.orangeandbronze.ozmness.UserRole" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
+        <g:set var="entityName" value="${message(code: 'userRole.label', default: 'UserRole')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -22,27 +22,23 @@
                     <thead>
                         <tr>
                         
-                            <g:sortableColumn property="username" title="${message(code: 'employee.username.label', default: 'Username')}" />
-
-                            <g:sortableColumn property="firstName" title="${message(code: 'employee.firstName.label', default: 'First Name')}" />
+                            <g:sortableColumn property="id" title="${message(code: 'userRole.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="lastName" title="${message(code: 'employee.lastName.label', default: 'Last Name')}" />
+                            <th><g:message code="userRole.role.label" default="Role" /></th>
                         
-                            <th><g:message code="employee.position.label" default="Position" /></th>
+                            <th><g:message code="userRole.user.label" default="User" /></th>
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${employeeInstanceList}" status="i" var="employeeInstance">
+                    <g:each in="${userRoleInstanceList}" status="i" var="userRoleInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-
-                            <td><g:link action="show" id="${employeeInstance.id}">${fieldValue(bean: employeeInstance, field: "username")}</g:link></td>
-
-                            <td>${fieldValue(bean: employeeInstance, field: "firstName")}</td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "lastName")}</td>
+                            <td><g:link action="show" id="${userRoleInstance.id}">${fieldValue(bean: userRoleInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: employeeInstance, field: "position")}</td>
+                            <td>${fieldValue(bean: userRoleInstance, field: "role")}</td>
+                        
+                            <td>${fieldValue(bean: userRoleInstance, field: "user")}</td>
                         
                         </tr>
                     </g:each>
@@ -50,7 +46,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${employeeInstanceTotal}" />
+                <g:paginate total="${userRoleInstanceTotal}" />
             </div>
         </div>
     </body>
