@@ -35,7 +35,14 @@
                             <td valign="top" class="value">${fieldValue(bean: employeeInstance, field: "username")}</td>
                             
                         </tr>
-
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="employee.password.label" default="Password" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: employeeInstance, field: "password")}</td>
+                            
+                        </tr>
+                    
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="employee.firstName.label" default="First Name" /></td>
                             
@@ -82,6 +89,19 @@
                             <td valign="top" class="name"><g:message code="employee.enabled.label" default="Enabled" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${employeeInstance?.enabled}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="employee.mentees.label" default="Mentees" /></td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${employeeInstance.mentees}" var="m">
+                                    <li><g:link controller="employee" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     

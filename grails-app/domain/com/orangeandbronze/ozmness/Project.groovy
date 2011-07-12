@@ -11,6 +11,7 @@ class Project {
     static hasMany = [
         technologies:Technology,
         developers: Employee
+
     ]
 
     static mapping = {

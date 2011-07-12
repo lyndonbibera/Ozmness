@@ -13,6 +13,7 @@ hibernate {
 environments {
     development {
         dataSource {
+            dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             dbCreate = 'update'
 	        driverClassName = 'com.mysql.jdbc.Driver'
 	        url = 'jdbc:mysql://localhost/ozmness'

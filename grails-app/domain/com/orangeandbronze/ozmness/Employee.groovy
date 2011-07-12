@@ -8,7 +8,8 @@ class Employee extends User {
 
     static hasMany = [
         projects: Project,
-        projectLeads: Project
+        projectLeads: Project,
+        mentees: Employee
     ]
 
     static belongsTo = [projects: Project]
