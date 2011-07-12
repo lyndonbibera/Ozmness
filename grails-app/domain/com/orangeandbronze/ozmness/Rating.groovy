@@ -8,6 +8,8 @@ class Rating {
     Employee creator
     Date dateCreated
 
+    static belongsTo = [rated: Employee]
+
     static constraints = {
         technology(nullable: false)
         value(range: 1..3)

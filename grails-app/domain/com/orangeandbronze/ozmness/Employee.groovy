@@ -9,12 +9,13 @@ class Employee extends User {
     static hasMany = [
         projects: Project,
         projectLeads: Project,
-        mentees: Employee
+        mentees: Employee,
+        ratings: Rating
     ]
 
     static belongsTo = [projects: Project]
 
-    static mappedBy = [projectLeads:'lead']
+    static mappedBy = [projectLeads:'lead', ratings: 'rated']
 
     static constraints = {
         firstName(blank: false)

@@ -1,3 +1,5 @@
+
+
 <%@ page import="com.orangeandbronze.ozmness.Employee" %>
 <html>
     <head>
@@ -112,6 +114,22 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'projects', 'errors')}">
                                     <g:select name="projects" from="${com.orangeandbronze.ozmness.Project.list()}" multiple="yes" optionKey="id" size="5" value="${employeeInstance?.projects*.id}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="ratings"><g:message code="employee.ratings.label" default="Ratings" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'ratings', 'errors')}">
+                                    
+<ul>
+<g:each in="${employeeInstance?.ratings?}" var="r">
+    <li><g:link controller="rating" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="rating" action="create" params="['employee.id': employeeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'rating.label', default: 'Rating')])}</g:link>
+
                                 </td>
                             </tr>
                         
