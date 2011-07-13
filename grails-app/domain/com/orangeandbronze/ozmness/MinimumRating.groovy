@@ -1,6 +1,6 @@
 package com.orangeandbronze.ozmness
 
-class MinimumRating {
+class MinimumRating implements Serializable{
     Integer value
     Technology technology
 

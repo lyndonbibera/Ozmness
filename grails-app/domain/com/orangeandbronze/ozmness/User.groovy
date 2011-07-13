@@ -1,6 +1,6 @@
 package com.orangeandbronze.ozmness
 
-class User {
+class User implements Serializable{
 
 	String username
 	String password

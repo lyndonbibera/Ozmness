@@ -33,9 +33,9 @@ class EmployeeTests extends GrailsUnitTestCase {
         e1.firstName = "Lyndon"
         e1.lastName = "Awesome"
         e1.mentor = e2
-
-        println "employee.validate: ${e1.validate()}"
-        println "hasErrors: ${e1.errors}"
+        e2.position = p1
+        e2.firstName = "Lyndon"
+        e2.lastName = "Bibera"
 
         assert e1.validate(["mentor"])
     }

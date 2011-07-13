@@ -1,8 +1,8 @@
 package com.orangeandbronze.ozmness
 
-class Rating {
+class Rating implements Serializable{
     Technology technology
-    Integer value
+    Integer value = 1
     String comment
     Employee rated
     Employee creator
@@ -19,6 +19,6 @@ class Rating {
     }
 
     String toString() {
-        "$technology[$value] by $creator"
+        "$technology[$value]"
     }
 }

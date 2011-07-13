@@ -9,6 +9,7 @@ class TechnologyTests extends GrailsUnitTestCase {
 
     protected void setUp() {
         super.setUp()
+        mockDomain(Technology)
         main = new Technology()
         branch = new Technology()
         branchOfBranch = new Technology()
@@ -19,15 +20,16 @@ class TechnologyTests extends GrailsUnitTestCase {
     }
 
     void testInvalidTechnologyTree() {
-        shouldFail(Exception) {
-            branch.parent = main
-            branchOfBranch.parent = branch
-            main.parent = branch
-        }
+        branch.parent = main
+        branchOfBranch.parent = branch
+        main.parent = branch
+        assert !main.validate()
     }
 
     void testCorrectTechnologyTree() {
         branchOfBranch.parent = branch
         branch.parent = main
+
+        assert main.validate(['parent'])
     }
 }

@@ -1,6 +1,6 @@
 package com.orangeandbronze.ozmness
 
-class Employee extends User {
+class Employee extends User implements Serializable{
     String firstName
     String lastName
     Position position
@@ -22,12 +22,13 @@ class Employee extends User {
         lastName(blank: false)
         position(blank: false)
         mentor(validator: { val, obj ->
-            val == null || val.id !=  obj.id ? true : "error.employee.circular"
+            /*val ? true :  val !=  obj ? true : "error.employee.circular"  <----TODO: figure this out jackass*/
+            val == null || val !=  obj ? true : "error.employee.circular"
         })
     }
 
     String toString() {
-        "$firstName $lastName [$position]"
+        "$firstName $lastName"
     }
 
 }

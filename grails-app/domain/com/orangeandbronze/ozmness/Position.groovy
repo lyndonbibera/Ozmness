@@ -1,6 +1,6 @@
 package com.orangeandbronze.ozmness
 
-class Position {
+class Position implements Serializable{
     String name
 
     static hasMany = [

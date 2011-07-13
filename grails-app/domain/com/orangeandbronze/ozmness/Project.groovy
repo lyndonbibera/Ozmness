@@ -1,6 +1,6 @@
 package com.orangeandbronze.ozmness
 
-class Project {
+class Project implements Serializable {
     String name
     Date dateStarted
     Date dateFinished

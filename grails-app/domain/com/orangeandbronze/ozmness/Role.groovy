@@ -1,6 +1,6 @@
 package com.orangeandbronze.ozmness
 
-class Role {
+class Role implements Serializable{
 
 	String authority
 
